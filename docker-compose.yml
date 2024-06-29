@@ -1,7 +1,7 @@
 services:
   zookeeper:
     restart: on-failure
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:7.5.0
     hostname: zookeeper
     container_name: zookeeper
     ports:
@@ -35,7 +35,7 @@ services:
 
   schema-registry:
     restart: on-failure
-    image: confluentinc/cp-schema-registry:latest
+    image: confluentinc/cp-schema-registry:7.5.0
     hostname: schema-registry
     container_name: schema-registry
     depends_on:
@@ -50,7 +50,7 @@ services:
 
   rest-proxy:
     restart: on-failure
-    image: confluentinc/cp-kafka-rest:latest
+    image: confluentinc/cp-kafka-rest:7.5.0
     hostname: rest-proxy
     depends_on:
       - broker
@@ -65,7 +65,7 @@ services:
 
   connect:
     restart: on-failure
-    image: confluentinc/cp-kafka-connect:latest
+    image: confluentinc/cp-kafka-connect:7.5.0
     hostname: connect
     container_name: connect
     depends_on:
